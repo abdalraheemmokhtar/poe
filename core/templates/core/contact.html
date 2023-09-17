@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Posts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h1 class="mt-6 flex justify-center text-xl text-indigo-600">Blog Posts</h1>
+    <ul class="m-6  justify-center">
+        {% for post in blog_posts %}
+
+        <a href="#" class="block max-w-sm p-6 mb-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{post.author}}</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">{{post.tag}}</p>
+        </a>
+        
+        {% endfor %}
+        {% block content %}{% endblock %}
+    </ul>
+</body>
+</html>
+
+
